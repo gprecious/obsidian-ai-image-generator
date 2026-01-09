@@ -2,7 +2,10 @@
 
 Generate AI images directly in Obsidian using **OpenAI DALL-E 3** or **Google Gemini Imagen**.
 
-![Demo](https://raw.githubusercontent.com/gprecious/obsidian-ai-image-generator/main/demo.gif)
+<p>
+  <img src="https://raw.githubusercontent.com/gprecious/obsidian-ai-image-generator/main/demo1.gif" width="45%">
+  <img src="https://raw.githubusercontent.com/gprecious/obsidian-ai-image-generator/main/demo2.gif" width="45%">
+</p>
 
 ## Features
 
