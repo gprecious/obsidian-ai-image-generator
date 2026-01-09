@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-easy-ai-image-generator",
+  "name": "Easy AI Image Generator",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Generate AI images using Gemini or OpenAI directly in Obsidian. Features prompt history, auto Korean-to-English translation, and customizable settings.",
+  "author": "gprecious",
+  "authorUrl": "https://github.com/gprecious",
+  "fundingUrl": "https://www.buymeacoffee.com/gprecious",
+  "isDesktopOnly": false
+}
