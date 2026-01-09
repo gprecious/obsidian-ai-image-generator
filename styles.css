@@ -1,0 +1,213 @@
+.easy-ai-image-modal {
+    width: 500px;
+    max-width: 90vw;
+}
+
+.easy-ai-image-prompt-input {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.easy-ai-image-status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.easy-ai-image-status.loading {
+    background-color: var(--background-secondary);
+    color: var(--text-muted);
+}
+
+.easy-ai-image-status.error {
+    background-color: var(--background-modifier-error);
+    color: var(--text-error);
+}
+
+.easy-ai-image-history-modal {
+    width: 700px;
+    max-width: 90vw;
+    max-height: 80vh;
+}
+
+.easy-ai-image-history-modal .modal-content {
+    overflow-x: hidden !important;
+    overflow-y: auto;
+}
+
+.easy-ai-image-empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px 20px;
+}
+
+.easy-ai-image-history-header {
+    border-bottom: 1px solid var(--background-modifier-border);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.easy-ai-image-history-list {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+}
+
+.easy-ai-image-history-item {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    gap: 12px;
+}
+
+.easy-ai-image-history-item:last-child {
+    border-bottom: none;
+}
+
+.easy-ai-image-history-thumbnail {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--background-secondary);
+    cursor: pointer;
+}
+
+.easy-ai-image-history-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.easy-ai-image-history-thumbnail-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.7em;
+}
+
+.easy-ai-image-history-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.easy-ai-image-history-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.easy-ai-image-history-prompt {
+    font-weight: 500;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.easy-ai-image-history-translated {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin-bottom: 4px;
+    font-style: italic;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.easy-ai-image-history-meta {
+    font-size: 0.8em;
+    color: var(--text-muted);
+    word-break: break-word;
+}
+
+.easy-ai-image-history-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.easy-ai-image-history-actions button {
+    padding: 4px 8px;
+    font-size: 0.85em;
+}
+
+.easy-ai-image-preview-modal {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.easy-ai-image-preview-modal img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.easy-ai-image-settings .easy-ai-image-api-key-input {
+    width: 300px;
+    font-family: monospace;
+}
+
+.easy-ai-image-support {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--background-modifier-border);
+    text-align: center;
+}
+
+.easy-ai-image-coffee-button {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.easy-ai-image-coffee-img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.easy-ai-image-links {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.easy-ai-image-links a {
+    color: var(--text-accent);
+    text-decoration: none;
+}
+
+.easy-ai-image-links a:hover {
+    text-decoration: underline;
+}
+
+@keyframes easy-ai-image-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.easy-ai-image-status.loading::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--text-muted);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: easy-ai-image-spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
