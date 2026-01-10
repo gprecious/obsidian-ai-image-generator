@@ -71,8 +71,8 @@ export class HistoryModal extends Modal {
         const history = this.historyManager.getHistory();
 
         if (history.length === 0) {
-            contentEl.createEl('p', { 
-                text: 'No images generated yet. Use the "Generate AI Image" command to create your first image.',
+            contentEl.createEl('p', {
+                text: 'No images generated yet. Use the "Generate AI image" command to create your first image.',
                 cls: 'easy-ai-image-empty-state'
             });
             return;
@@ -110,7 +110,7 @@ export class HistoryModal extends Modal {
         if (file instanceof TFile) {
             const img = thumbnailEl.createEl('img');
             img.src = this.app.vault.getResourcePath(file);
-            img.alt = 'Generated Image';
+            img.alt = 'Generated image';
             thumbnailEl.addEventListener('click', () => {
                 new ImagePreviewModal(this.app, item.imagePath).open();
             });

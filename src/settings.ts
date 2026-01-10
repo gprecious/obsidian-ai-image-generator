@@ -34,10 +34,6 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
         const settings = this.historyManager.getSettings();
 
         new Setting(containerEl)
-            .setName('Easy AI image generator settings')
-            .setHeading();
-
-        new Setting(containerEl)
             .setName('Default provider')
             .setDesc('Select your preferred AI provider for image generation')
             .addDropdown(dropdown => {
@@ -87,7 +83,7 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName('Default options')
+            .setName('Defaults')
             .setHeading();
 
         new Setting(containerEl)
@@ -212,7 +208,7 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
         });
         linksDiv.createEl('span', { text: ' • ' });
         linksDiv.createEl('a', {
-            text: 'Report an Issue',
+            text: 'Report an issue',
             href: `${PLUGIN_INFO.githubUrl}/issues`,
         });
     }

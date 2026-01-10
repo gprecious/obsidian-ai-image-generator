@@ -57,7 +57,7 @@ export const GEMINI_STYLE_DESCRIPTIONS: Record<string, string> = {
 export const SIZE_DESCRIPTIONS: Record<ImageSize, string> = {
     small: 'Small (1024x1024)',
     medium: 'Medium (1024x1024)',
-    large: 'Large (Wide)',
+    large: 'Large (wide)',
 };
 
 export const PLUGIN_INFO = {

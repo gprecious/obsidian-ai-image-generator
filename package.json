@@ -1,6 +1,6 @@
 {
   "name": "easy-ai-image-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate AI images using Gemini or OpenAI directly in Obsidian",
   "main": "main.js",
   "scripts": {

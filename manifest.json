@@ -1,7 +1,7 @@
 {
   "id": "easy-ai-image-generator",
   "name": "Easy AI Image Generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "minAppVersion": "1.0.0",
   "description": "Generate AI images using Gemini or OpenAI. Features prompt history, auto Korean-to-English translation, and customizable settings.",
   "author": "gprecious",
