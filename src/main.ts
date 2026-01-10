@@ -15,13 +15,13 @@ export default class EasyAIImagePlugin extends Plugin {
 
         this.imageService = new ImageGeneratorService(this.app.vault, settings);
 
-        this.addRibbonIcon('image', 'AI Image History', () => {
+        this.addRibbonIcon('image', 'AI image history', () => {
             this.openHistoryModal();
         });
 
         this.addCommand({
             id: 'generate-ai-image',
-            name: 'Generate AI Image',
+            name: 'Generate AI image',
             editorCallback: (editor: Editor, view: MarkdownView) => {
                 this.openGenerateModal(editor);
             },
@@ -29,7 +29,7 @@ export default class EasyAIImagePlugin extends Plugin {
 
         this.addCommand({
             id: 'open-ai-image-history',
-            name: 'Open Image History',
+            name: 'Open image history',
             callback: () => {
                 this.openHistoryModal();
             },

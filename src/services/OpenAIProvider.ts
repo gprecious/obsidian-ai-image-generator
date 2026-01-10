@@ -23,7 +23,7 @@ export class OpenAIProvider implements IImageProvider {
             throw new Error('OpenAI API key is not configured');
         }
 
-        console.log('[EasyAI OpenAI] Generating image with:', { prompt, size, style });
+        console.debug('[EasyAI OpenAI] Generating image with:', { prompt, size, style });
 
         let response;
         try {
@@ -49,7 +49,7 @@ export class OpenAIProvider implements IImageProvider {
             throw new Error(`OpenAI request failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
         }
 
-        console.log('[EasyAI OpenAI] Response status:', response.status);
+        console.debug('[EasyAI OpenAI] Response status:', response.status);
 
         if (response.status !== 200) {
             const errorData = response.json;
@@ -59,7 +59,7 @@ export class OpenAIProvider implements IImageProvider {
         }
 
         const data: OpenAIImageResponse = response.json;
-        console.log('[EasyAI OpenAI] Response received, has data:', !!data.data?.[0]?.b64_json);
+        console.debug('[EasyAI OpenAI] Response received, has data:', !!data.data?.[0]?.b64_json);
         
         if (!data.data?.[0]?.b64_json) {
             throw new Error('No image data received from OpenAI');

@@ -54,11 +54,11 @@ export class GenerateImageModal extends Modal {
         const { contentEl } = this;
         contentEl.addClass('easy-ai-image-modal');
 
-        this.setTitle('Generate AI Image');
+        this.setTitle('Generate AI image');
 
         new Setting(contentEl)
             .setName('Prompt')
-            .setDesc('Describe the image you want to generate (Korean auto-translated)')
+            .setDesc('Describe the image you want to generate (Korean is auto-translated)')
             .addTextArea(text => {
                 this.promptInput = text;
                 text.setPlaceholder('A beautiful sunset over mountains...')
@@ -118,7 +118,7 @@ export class GenerateImageModal extends Modal {
             .addButton(button => {
                 this.generateButton = button;
                 button
-                    .setButtonText('Generate Image')
+                    .setButtonText('Generate image')
                     .setCta()
                     .onClick(() => this.handleGenerate());
             })
@@ -159,7 +159,7 @@ export class GenerateImageModal extends Modal {
         
         if (this.generateButton) {
             this.generateButton.setDisabled(generating);
-            this.generateButton.setButtonText(generating ? 'Generating...' : 'Generate Image');
+            this.generateButton.setButtonText(generating ? 'Generating...' : 'Generate image');
         }
 
         if (this.promptInput) {
@@ -187,9 +187,9 @@ export class GenerateImageModal extends Modal {
         }
 
         this.setGenerating(true);
-        console.log('[EasyAI] Starting image generation...');
-        console.log('[EasyAI] Provider:', this.currentProvider);
-        console.log('[EasyAI] Prompt:', prompt);
+        console.debug('[EasyAI] Starting image generation...');
+        console.debug('[EasyAI] Provider:', this.currentProvider);
+        console.debug('[EasyAI] Prompt:', prompt);
 
         try {
             let translatedPrompt = prompt;
@@ -198,23 +198,23 @@ export class GenerateImageModal extends Modal {
                 if (this.statusEl) {
                     this.statusEl.setText('Translating prompt...');
                 }
-                console.log('[EasyAI] Translating Korean prompt...');
+                console.debug('[EasyAI] Translating Korean prompt...');
                 translatedPrompt = await this.imageService.translatePrompt(prompt);
-                console.log('[EasyAI] Translated:', translatedPrompt);
+                console.debug('[EasyAI] Translated:', translatedPrompt);
             }
 
             if (this.statusEl) {
                 this.statusEl.setText('Generating image...');
             }
 
-            console.log('[EasyAI] Calling image service...');
+            console.debug('[EasyAI] Calling image service...');
             const result: GenerationResult = await this.imageService.generate({
                 prompt: translatedPrompt,
                 size: this.currentSize,
                 style: this.currentStyle,
                 provider: this.currentProvider,
             });
-            console.log('[EasyAI] Result:', result);
+            console.debug('[EasyAI] Result:', result);
 
             if (result.success && result.imagePath) {
                 await this.historyManager.addHistoryItem(

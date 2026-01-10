@@ -57,7 +57,7 @@ export class GeminiProvider implements IImageProvider {
 
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODELS.gemini.image}:generateContent?key=${this.apiKey}`;
 
-        console.log('[EasyAI Gemini] Generating image with:', { prompt: enhancedPrompt });
+        console.debug('[EasyAI Gemini] Generating image with:', { prompt: enhancedPrompt });
 
         let response;
         try {
@@ -88,7 +88,7 @@ export class GeminiProvider implements IImageProvider {
             throw new Error(`Gemini request failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
         }
 
-        console.log('[EasyAI Gemini] Response status:', response.status);
+        console.debug('[EasyAI Gemini] Response status:', response.status);
 
         if (response.status !== 200) {
             const errorData = response.json;
@@ -98,7 +98,7 @@ export class GeminiProvider implements IImageProvider {
         }
 
         const data: GeminiGenerateContentResponse = response.json;
-        console.log('[EasyAI Gemini] Response received:', JSON.stringify(data).substring(0, 200));
+        console.debug('[EasyAI Gemini] Response received:', JSON.stringify(data).substring(0, 200));
 
         // Find the image part in the response
         const parts = data.candidates?.[0]?.content?.parts;

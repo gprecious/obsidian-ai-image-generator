@@ -33,10 +33,12 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
 
         const settings = this.historyManager.getSettings();
 
-        containerEl.createEl('h2', { text: 'Easy AI Image Generator Settings' });
+        new Setting(containerEl)
+            .setName('Easy AI image generator settings')
+            .setHeading();
 
         new Setting(containerEl)
-            .setName('Default Provider')
+            .setName('Default provider')
             .setDesc('Select your preferred AI provider for image generation')
             .addDropdown(dropdown => {
                 dropdown
@@ -50,10 +52,12 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
                     });
             });
 
-        containerEl.createEl('h3', { text: 'API Keys' });
+        new Setting(containerEl)
+            .setName('API keys')
+            .setHeading();
 
         new Setting(containerEl)
-            .setName('OpenAI API Key')
+            .setName('OpenAI API key')
             .setDesc('Your OpenAI API key for DALL-E image generation')
             .addText(text => {
                 text
@@ -68,7 +72,7 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName('Gemini API Key')
+            .setName('Gemini API key')
             .setDesc('Your Google Gemini API key for Imagen generation')
             .addText(text => {
                 text
@@ -82,10 +86,12 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
                 text.inputEl.addClass('easy-ai-image-api-key-input');
             });
 
-        containerEl.createEl('h3', { text: 'Default Options' });
+        new Setting(containerEl)
+            .setName('Default options')
+            .setHeading();
 
         new Setting(containerEl)
-            .setName('Default Image Size')
+            .setName('Default image size')
             .setDesc('Default size for generated images')
             .addDropdown(dropdown => {
                 Object.entries(SIZE_DESCRIPTIONS).forEach(([key, desc]) => {
@@ -100,7 +106,7 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName('Default DALL-E Style')
+            .setName('Default DALL-E style')
             .setDesc('Default style when using OpenAI DALL-E')
             .addDropdown(dropdown => {
                 Object.entries(DALLE_STYLE_DESCRIPTIONS).forEach(([key, desc]) => {
@@ -115,7 +121,7 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
             });
 
         new Setting(containerEl)
-            .setName('Default Gemini Style')
+            .setName('Default Gemini style')
             .setDesc('Default style when using Google Gemini')
             .addDropdown(dropdown => {
                 Object.entries(GEMINI_STYLE_DESCRIPTIONS).forEach(([key, desc]) => {
@@ -129,10 +135,12 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
                     });
             });
 
-        containerEl.createEl('h3', { text: 'Storage' });
+        new Setting(containerEl)
+            .setName('Storage')
+            .setHeading();
 
         new Setting(containerEl)
-            .setName('Save Location')
+            .setName('Save location')
             .setDesc('Folder path where generated images will be saved')
             .addText(text => {
                 text
@@ -145,7 +153,9 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
                     });
             });
 
-        containerEl.createEl('h3', { text: 'Translation' });
+        new Setting(containerEl)
+            .setName('Translation')
+            .setHeading();
 
         new Setting(containerEl)
             .setName('Auto-translate Korean')
@@ -159,10 +169,12 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
                     });
             });
 
-        containerEl.createEl('h3', { text: 'History' });
+        new Setting(containerEl)
+            .setName('History')
+            .setHeading();
 
         new Setting(containerEl)
-            .setName('Max History Items')
+            .setName('Max history items')
             .setDesc('Maximum number of items to keep in generation history')
             .addSlider(slider => {
                 slider
@@ -175,7 +187,9 @@ export class EasyAIImageSettingTab extends PluginSettingTab {
                     });
             });
 
-        containerEl.createEl('h3', { text: 'Support' });
+        new Setting(containerEl)
+            .setName('Support')
+            .setHeading();
 
         const supportDiv = containerEl.createDiv({ cls: 'easy-ai-image-support' });
         

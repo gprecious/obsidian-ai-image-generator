@@ -45,7 +45,7 @@ export const MODELS = {
 export const DALLE_STYLE_DESCRIPTIONS: Record<string, string> = {
     natural: 'Natural, realistic style',
     vivid: 'Vivid, dramatic hyper-real style',
-};
+} as const;
 
 export const GEMINI_STYLE_DESCRIPTIONS: Record<string, string> = {
     photorealistic: 'Photo-realistic, high detail',

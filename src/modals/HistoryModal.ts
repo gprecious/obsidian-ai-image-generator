@@ -13,7 +13,7 @@ class ImagePreviewModal extends Modal {
         this.imagePath = imagePath;
     }
 
-    async onOpen(): Promise<void> {
+    onOpen(): void {
         const { contentEl } = this;
         contentEl.addClass('easy-ai-image-preview-modal');
 
@@ -21,7 +21,7 @@ class ImagePreviewModal extends Modal {
         if (file instanceof TFile) {
             const img = contentEl.createEl('img');
             img.src = this.app.vault.getResourcePath(file);
-            img.alt = 'Generated Image';
+            img.alt = 'Generated image';
         } else {
             contentEl.createEl('p', { text: 'Image not found' });
         }
@@ -60,7 +60,7 @@ export class HistoryModal extends Modal {
         const { contentEl } = this;
         contentEl.addClass('easy-ai-image-history-modal');
 
-        this.setTitle('Image Generation History');
+        this.setTitle('Image generation history');
         this.renderContent();
     }
 
@@ -84,7 +84,7 @@ export class HistoryModal extends Modal {
             .setName(`${history.length} image(s) in history`)
             .addButton(button => {
                 button
-                    .setButtonText('Clear All')
+                    .setButtonText('Clear all')
                     .setWarning()
                     .onClick(async () => {
                         await this.historyManager.clearHistory();
