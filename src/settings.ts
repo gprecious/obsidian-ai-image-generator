@@ -1,6 +1,6 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
 import type { Plugin } from 'obsidian';
-import type { EasyAIImageSettings, APIProvider, ImageSize, DallEStyle, GeminiStyle } from './types';
+import type { APIProvider, ImageSize, DallEStyle, GeminiStyle } from './types';
 import { 
     SIZE_DESCRIPTIONS, 
     DALLE_STYLE_DESCRIPTIONS, 
